@@ -1,29 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Playball);
 @import url(https://fonts.googleapis.com/css?family=Montez);
 @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
-html {
-    font-size: 62.5%;
-}
-
-.wrapper {
-    overflow: hidden;
-}
-
-body {
-    color: #333;
-    height: auto;
-    padding-bottom: 20px;
-    font-size: .8em;
-}
-
-.menugauche {
-    padding-left: 180px;
-}
-
-.menudroite {
-    padding-right: 90px;
-}
-
 .loader {
     background: url('../images/svg/logo.svg') 50% 50% no-repeat rgba(255, 255, 255, 0.8);
     cursor: wait;
@@ -35,32 +12,14 @@ body {
     z-index: 9999;
 }
 
-.loader h1 {
-    color: #fff;
-    margin-top: 40px;
-    font-family: 'Playball', cursive;
-    line-height: 700px;
-    margin: 0 0 10px;
-    padding: 0;
-    text-align: center;
-    visibility: hidden;
-}
-
-.loader img {
-    width: 50%;
-}
-
-video {
-    width: 100%;
-    min-height: 30%;
-    left: 0;
-    overflow: hidden;
-    z-index: -1;
-}
-
 #fixe {
     position: fixed;
     width: 600px;
+}
+
+.video-wrapper {
+    width: 600px;
+    max-width: 100%;
 }
 
 .small {
@@ -83,13 +42,25 @@ video {
     border-style: outset;
 }
 
+ul li {
+    background: rgb(11, 35, 79);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(11, 35, 79, 1) 0%, rgba(0, 0, 0, 1) 100%, rgba(125, 185, 232, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(11, 35, 79, 1) 0%, rgba(0, 0, 0, 1) 100%, rgba(125, 185, 232, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(11, 35, 79, 1) 0%, rgba(0, 0, 0, 1) 100%, rgba(125, 185, 232, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#0b234f', endColorstr='#7db9e8', GradientType=0);
+    /* IE6-9 */
+}
+
 .collapsible-header a {
     padding-left: 80px;
 }
 
 .collapsible-header a:hover {
-    color: #efefd2;
-    border-bottom: 1px solid #10eded;
+    color: aqua;
 }
 
 ul li.indicator-item.active {
@@ -112,18 +83,49 @@ ul li.indicator-item.active {
     padding-right: 60px;
 }
 
+.loader h1 {
+    color: #fff;
+    margin-top: 40px;
+    font-family: 'Playball', cursive;
+    line-height: 700px;
+    margin: 0 0 10px;
+    padding: 0;
+    text-align: center;
+    visibility: hidden;
+}
+
+.loader img {
+    width: 50%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: #333;
+    height: auto;
+    padding-bottom: 20px;
+    font-size: .8em;
+}
+
+h1 {
+    color: #0b386d;
+    font-family: 'Playball', cursive;
+}
+
 h2 {
     color: #0b386d;
     font-family: 'Playball', cursive;
     margin-left: 10px;
-    font-size: 2.8em;
+    font-size: 2.8rem;
 }
 
 h3 {
     color: #0b386d;
     font-family: 'Playball', cursive;
     margin-left: 10px;
-    font-size: 2.9em;
+    font-size: 2.4rem;
     border-bottom: 1px solid #c7c7c7;
     width: 100%;
 }
@@ -150,17 +152,14 @@ h4 {
 }
 
 .bandeau {
+    width: 100%;
+    height: 150px;
     display: flex;
+    background: url(../svg/bandeau.svg)no-repeat;
 }
 
 .bandeau img {
-    width: 110px;
-    margin: auto;
-    top: 15px;
-    position: relative;
-}
-
-.bandeau a {
+    width: 100px;
     margin: auto;
 }
 
@@ -176,7 +175,17 @@ h4 {
     border-right: groove 2px white;
 }
 
+
+/*
+    ul {
+        color: #fff;
+        margin-top: 80px;
+    }
+*/
+
 nav {
+    padding-top: 20px;
+    padding-bottom: 90px;
     font-family: 'Playball', cursive;
 }
 
@@ -203,9 +212,8 @@ nav ul li {
 }
 
 nav .button-collapse i {
-    font-size: 4.3em;
+    font-size: 3.7rem;
     margin-left: 10px;
-    margin-top: 5px;
 }
 
 nav {
@@ -236,10 +244,16 @@ nav {
     /* IE6-9 */
 }
 
+.video {
+    background-color: black;
+    max-height: 400px;
+    width: 100%;
+}
+
 #bouton {
     text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 150px;
+    padding-bottom: 60px;
 }
 
 #bouton a:hover {
@@ -333,7 +347,7 @@ img.full {
 }
 
 .btn {
-    padding: 0 0em;
+    padding: 0 0rem;
 }
 
 .crea {
@@ -463,33 +477,11 @@ p span + span {
     }
 }
 
-@media (min-width: 15em) {
-    footer p {
-        font-size: 1.8em;
-        text-align: center;
-        padding: 20px;
-        color: #fff;
-    }
-}
-
 .modal-close {
     float: right;
     margin-right: -23px;
     /* margin-left: 3px; */
     margin-top: 0px;
-}
-
-.slider .slides li {
-    background: rgb(48, 97, 188);
-    /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(11, 35, 79, 1) 0%, rgba(0, 0, 0, 1) 100%, rgba(125, 185, 232, 1) 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgb(11, 35, 79) 0%, rgba(0, 0, 0, 1) 100%, rgba(125, 185, 232, 1) 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #0b234f 0%, rgba(0, 0, 0, 1) 100%, rgba(125, 185, 232, 1) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#0b234f', endColorstr='#7db9e8', GradientType=0);
-    /* IE6-9 */
 }
 
 .slider-wrapper {
@@ -517,13 +509,13 @@ p span + span {
 
 .slider-wrapper .slider-arrow-nav .nav-arrow.next {
     border-left: none;
-    right: 1em;
+    right: 1rem;
     border-bottom: none;
 }
 
 .slider-wrapper .slider-arrow-nav .nav-arrow.prev {
     border-top: none;
-    left: 1em;
+    left: 1rem;
     border-right: none;
     z-index: 3;
 }
@@ -550,7 +542,7 @@ p span + span {
 
 .slider-wrapper .slider-nav {
     position: absolute;
-    bottom: 1em;
+    bottom: 1rem;
     left: 0;
     width: 100%;
     z-index: 3;
@@ -560,8 +552,8 @@ p span + span {
 .slider-wrapper .slider-nav .nav-button {
     display: inline-block;
     width: 1rem;
-    height: 1em;
-    margin: 0 0.5em;
+    height: 1rem;
+    margin: 0 0.5rem;
     cursor: pointer;
     background: rgba(11, 35, 79, 0.7);
     border-radius: 50%;
@@ -810,8 +802,6 @@ p span + span {
 .input-field input[type=text].valid {
     border-bottom: 1px solid #000;
     box-shadow: 0 1px 0 0 #000;
-    font-size: 1.8px;
-    padding-left: 20px;
 }
 
 
@@ -820,8 +810,6 @@ p span + span {
 .input-field input[type=text].invalid {
     border-bottom: 1px solid beige;
     box-shadow: 0 1px 0 0 #000;
-    font-size: 1.8em;
-    padding-left: 20px;
 }
 
 
@@ -832,11 +820,11 @@ p span + span {
 }
 
 .social img:hover {
-    -webkit-transform: rotate(-180deg);
-    -moz-transform: rotate(-180deg);
-    -ms-transform: rotate(-180deg);
-    -o-transform: rotate(-180deg);
-    transform: rotate(-180deg);
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    transform: rotate(-30deg);
 }
 
 .social {
@@ -855,14 +843,10 @@ p span + span {
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#0b234f', endColorstr='#7db9e8', GradientType=0);
     /* IE6-9 */
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     border-radius: 30px;
     border: 3px solid rgb(11, 35, 79);
     margin-top: 30px;
-}
-
-bouton.formulaire {
-    color: red;
 }
 
 #contact {
@@ -911,26 +895,6 @@ input[type=number],
 input[type=search],
 textarea.materialize-textarea {
     background-color: beige;
-    border-radius: 10px;
-    padding-bottom: 5px;
-}
-
-.containervideo {
-    /*    position: fixed;*/
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -999;
-    overflow: hidden;
-    background-image: url(../video/mer.web-progress.mp4) no-repeat center fixed;
-    background-size: cover;
-}
-
-video {
-    display: block;
 }
 
 @media screen and (min-width: 200px) and (max-width: 640px) {
@@ -955,20 +919,6 @@ video {
     .shadow {
         padding-bottom: 20px;
     }
-    .slider .slides li img {
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 60px;
-    }
-    .slider .slides li .caption {
-        background-color: rgba(0, 0, 0, 0.58);
-        margin-top: 240px;
-        padding-right: 10px;
-    }
-    .bandeau img {
-        width: 70px;
-        top: 10px;
-    }
 }
 
 $gap: 16px;
@@ -991,7 +941,7 @@ $gap: 16px;
 
 
 }
-.content {
+&.content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1044,7 +994,7 @@ $gap: 16px;
     }
 }
 .ecriture {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 20px;
 }
 footer {
